@@ -9,7 +9,8 @@ import Button from "@mui/material/Button";
 import { Typography, Stack } from "@mui/material";
 import Forms from "./Forms";
 import { useDispatch } from "react-redux";
-import { inputData } from "../action/resumeAction";
+// import { inputData } from "../action/resumeAction";
+import { resumeActions } from "../store/resume-slice";
 
 function getSteps() {
   return [
@@ -78,7 +79,7 @@ const HorizontalLinearStepper = () => {
                       onClick={() => {
                         handleNext();
                         console.log(profileSection);
-                        dispatch(inputData(profileSection));
+                        dispatch(resumeActions.submitData(profileSection));
                       }}
                     >
                       Finish

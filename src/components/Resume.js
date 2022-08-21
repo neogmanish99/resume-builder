@@ -1,13 +1,13 @@
-import React, { useEffect, useState, useRef } from "react";
+import React from "react";
 import "./Resume.min.css";
 import { useSelector } from "react-redux";
 
 const Resume = () => {
-  const { fields } = useSelector((state) => state.inputReducers);
+  const { fields } = useSelector((state) => state.resume);
 
   //   component state
 
-  const input = fields[0];
+  const input = fields;
   return (
     <div className="main-resume">
       <div className="left">
@@ -49,7 +49,7 @@ const Resume = () => {
           <div className="container">
             <h1>Skills Section</h1>
             <ul className="award-list list-flat">
-              <li>Skills You Have: {fields[0].skills}</li>
+              <li>Skills You Have: {input.skills}</li>
             </ul>
           </div>
         </div>
